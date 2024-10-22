@@ -4,20 +4,42 @@
 
 <head>
 	<link rel="stylesheet" href="styles.css">
+	<script>
+        function showAlert() {
+            // Get the form values
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var phoneNumber = document.getElementById("phoneNumber").value;
+            var emailID = document.getElementById("emailID").value;
+
+            // Create the alert message
+            var message = "First Name: " + firstName + " Last Name: " + lastName + 
+                          " Phone Number: " + phoneNumber + " Email ID: " + emailID;
+
+            // Display the alert
+            alert(message);
+        }
+    </script>
 </head>
 
 <body>
 	<!-- the entire body must be written by student -->
-	<form onsubmit="showAlert(); return false;">
-	<label>First Name:</label>
-	<input type="text" id="firname" name="name"><br>
-	<label>Last Name:</label>
-	<input type="text" id="lstname" name="name"><br>
-	<label>Phone Number:</label>
-	<input type="number" id="num" name="number"><br>
-	<label>Email ID:</label>
-	<input type="email" id="email" name="email"><br>
-	<button>Submit</button></form>
+
+    <form onsubmit="event.preventDefault(); showAlert();">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="First Name" required><br><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="Last Name" required><br><br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="Phone Number" required><br><br>
+
+        <label for="emailID">Email ID:</label>
+        <input type="email" id="emailID" name="Email ID" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
     <script type="text/javascript" src="./script.js">
 </script>
 
